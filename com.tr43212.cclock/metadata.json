@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "trinhtuantruong2k0@@gmail.com",
+                "Name": "Tr43212"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "A clock. With the font used by Crystal Castles logo.",
+        "Icon": "kclock",
+        "Id": "com.tr43212.cclock",
+        "Name": "CClock",
+        "Version": "0.1",
+        "Website": "https://github.com/a5-truongdz",
+        "BugReportUrl": "https://github.com/a5-truongdz"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "Plasma/Applet"
+}
