@@ -11,7 +11,7 @@ PlasmoidItem {
 
     function quote() {
         var request = new XMLHttpRequest()
-        request.open("GET", Qt.resolvedUrl("../../assets/quotes" + source + ".txt"), false)
+        request.open("GET", Qt.resolvedUrl("../../assets/quotes/" + source + ".txt"), false)
         request.send()
         var line = []
         for (var s of request.responseText.split("\n")) {
