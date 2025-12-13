@@ -1,0 +1,2 @@
+# cclock
+A KDE clock
