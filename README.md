@@ -31,4 +31,4 @@ $ vi $CCLOCK/contents/config/config.qml
 ```
 $ cp quotes.txt $CCLOCK/assets/quotes/
 ```
-4. Change the property to use your quotes instead: [Configuration](#-configuration)
+4. Change the property to use your quotes instead: [Configuration](#configuration)
