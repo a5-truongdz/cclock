@@ -2,16 +2,14 @@ import QtQuick
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
-
+import "../config"
 
 PlasmoidItem {
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
 
-    property var source: "crystal-castles"
-
     function quote() {
         var request = new XMLHttpRequest()
-        request.open("GET", Qt.resolvedUrl("../../assets/quotes/" + source + ".txt"), false)
+        request.open("GET", Qt.resolvedUrl("../../assets/quotes/" + Config.quoteSource + ".txt"), false)
         request.send()
         var line = []
         for (var s of request.responseText.split("\n")) {
@@ -33,14 +31,14 @@ PlasmoidItem {
         running: true
         repeat: true
         onTriggered: {
-            time = Qt.formatTime(new Date(), "hh:mm:ss")
-            date = Qt.formatDate(new Date(), "- dddd, d MMMM, yyyy -")
+            time = Qt.formatTime(new Date(), Config.timeFormat)
+            date = Qt.formatDate(new Date(), Config.dateFormat)
         }
     }
 
     Timer {
         id: quotetimer
-        interval: 300000
+        interval: Config.quoteInterval
         running: true
         repeat: true
         onTriggered: {
@@ -48,8 +46,8 @@ PlasmoidItem {
         }
     }
 
-    property var time: Qt.formatTime(new Date(), "hh:mm:ss")
-    property var date: Qt.formatDate(new Date(), "- dddd, d MMMM, yyyy -")
+    property var time: Qt.formatTime(new Date(), Config.timeFormat)
+    property var date: Qt.formatDate(new Date(), Config.dateFormat)
     property var pos: 90
     property var quotetext: quote()
 
